@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from app.telegram.app import app as telegram_app
-from app.auth.app import app as auth_app
+from app.telegram.api import app as telegram_app
+from app.auth.api import app as auth_app
 app = FastAPI()
 
 #include routers
