@@ -30,7 +30,7 @@ async def migrate():
     logger.info(msg=f"Found {len(unregistered_migration_scripts)} changes: {unregistered_migration_scripts}")
     for migration_script in unregistered_migration_scripts:
         async with in_transaction("default") as t_conn:
-            sql_script = open(file=f"{settings.DB_MIGRATE_PATH}{os.sep}{migration_script}", mode="r")
+            sql_script = open(file=f"{settings.DB_MIGRATE_PATH}{os.sep}{migration_script}", mode="r").read()
             await t_conn.execute_script(sql_script)
             await Migrate.create(file=migration_script)
 

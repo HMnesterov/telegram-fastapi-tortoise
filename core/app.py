@@ -6,7 +6,7 @@ from app.auth.api import app as auth_app
 app = FastAPI()
 
 #include routers
-app.include_router(telegram_app, prefix="api")
+app.include_router(telegram_app, prefix="/api")
 
 app.include_router(auth_app)
 

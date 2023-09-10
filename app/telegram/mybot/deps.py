@@ -8,10 +8,10 @@ bot = Bot(token=settings.TELEGRAM_TOKEN)
 dp = Dispatcher(bot=bot)
 
 
-@app.on_startup()
+@app.on_event("startup")
 async def on_startup():
     await bot.delete_webhook(drop_pending_updates=True)
-    await bot.set_webhook(url=settings.WEBHOOK_URL + '/webhook')
+    await bot.set_webhook(url=settings.WEBHOOK_URL + '/api/webhook')
 
 
 @app.post(f'/webhook')
