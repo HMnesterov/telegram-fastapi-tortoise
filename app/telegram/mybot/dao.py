@@ -20,6 +20,7 @@ class TGMessage(models.Model):
 class TGChat(models.Model):
     """Telegram chat dao"""
     id = fields.BigIntField(pk=True, generated=False, description="telegram chat_id")
+    hash = fields.CharField(max_length=999)
     full_name = fields.CharField(max_length=255)
     type = fields.CharField(max_length=255, description="Chat mode", null=True)
 
