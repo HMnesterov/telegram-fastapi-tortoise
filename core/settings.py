@@ -6,9 +6,9 @@ class Settings(BaseSettings):
     DB_MIGRATE_PATH: str
     WEBHOOK_URL: str
     #REDIS_CONNECTION: str
-    #ACCESS_TOKEN_EXPIRE_MINUTES: int
-    #SECRET_KEY: str
-    #ALGORITM: str
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
+    SECRET_KEY: str
+    ALGORITHM: str
 
     class Config:
         env_file = "env/.env"
