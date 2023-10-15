@@ -11,7 +11,8 @@ async def on_startup():
         modules={
 
             "migrate": ["core.migrate"],
-            "models": ["app.telegram.mybot.dao"]
+            "models": ["app.telegram.mybot.dao",
+                       "app.auth.dao"]
         }
     )
     await migrate()
